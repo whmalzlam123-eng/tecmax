@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تك إيجيبت | معدات ألبان ومخارط CNC</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0D1E36;
+  --navy-mid: #1A3252;
+  --orange: #E8681A;
+  --orange-light: #F28040;
+  --steel: #8FA8C0;
+  --light-bg: #F4F6F9;
+  --white: #FFFFFF;
+  --text-dark: #0D1E36;
+  --text-mid: #4A6278;
+  --text-light: #8FA8C0;
+  --border: #DDE4EC;
+}
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--navy);
+  padding: 0 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+  box-shadow: 0 2px 16px rgba(13,30,54,0.4);
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 40px; height: 40px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-icon svg { width: 24px; height: 24px; fill: white; }
+.logo-text { color: white; font-size: 22px; font-weight: 900; letter-spacing: -0.5px; }
+.logo-text span { color: var(--orange); }
+nav { display: flex; gap: 2rem; align-items: center; }
+nav a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 15px; font-weight: 600;
+  transition: color 0.2s;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+}
+nav a:hover { color: white; border-bottom-color: var(--orange); }
+.header-cta {
+  background: var(--orange);
+  color: white !important;
+  padding: 8px 20px !important;
+  border-radius: 8px;
+  border-bottom: none !important;
+  transition: background 0.2s !important;
+}
+.header-cta:hover { background: var(--orange-light) !important; }
+.hamburger { display: none; background: none; border: none; cursor: pointer; }
+.hamburger svg { width: 28px; height: 28px; stroke: white; }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 90vh;
+  background: var(--navy);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%) rotate(3deg);
+  width: 80px; height: 100%;
+  background: var(--orange);
+  z-index: 2;
+}
+.hero-panel {
+  padding: 6rem 4rem;
+  display: flex; flex-direction: column;
+  justify-content: center;
+  position: relative; z-index: 3;
+}
+.hero-panel.left { background: var(--navy-mid); padding-left: 5rem; }
+.hero-panel.right { background: #071424; padding-right: 5rem; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(232,104,26,0.15);
+  border: 1px solid rgba(232,104,26,0.4);
+  color: var(--orange);
+  font-size: 13px; font-weight: 700;
+  padding: 5px 14px; border-radius: 100px;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+.hero-eyebrow svg { width: 16px; height: 16px; fill: var(--orange); }
+.hero-panel h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+.hero-panel h1 span { color: var(--orange); }
+.hero-panel p {
+  font-size: 16px; line-height: 1.8;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 2.5rem;
+  max-width: 360px;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--orange);
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  font-size: 16px; font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 10px; border: none; cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  width: fit-content;
+}
+.btn-primary:hover { background: var(--orange-light); transform: translateY(-2px); }
+.btn-primary svg { width: 20px; height: 20px; stroke: white; }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  font-size: 16px; font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.3); cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: fit-content;
+}
+.btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+.hero-stats {
+  display: flex; gap: 2rem; margin-top: 2.5rem;
+}
+.hero-stat { }
+.hero-stat .num {
+  font-size: 28px; font-weight: 900; color: white;
+  line-height: 1;
+}
+.hero-stat .num span { color: var(--orange); }
+.hero-stat .label {
+  font-size: 13px; color: rgba(255,255,255,0.5);
+  margin-top: 2px;
+}
+.hero-illustration {
+  margin-top: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  display: flex; align-items: center; justify-content: center;
+  height: 180px;
+}
+.hero-illustration svg { width: 140px; height: 140px; opacity: 0.7; }
+
+/* ===== SECTION COMMON ===== */
+section { padding: 5rem 3rem; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(232,104,26,0.1);
+  color: var(--orange);
+  font-size: 13px; font-weight: 700;
+  padding: 5px 14px; border-radius: 100px;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+  line-height: 1.25;
+}
+.section-title span { color: var(--orange); }
+.section-subtitle {
+  font-size: 16px; color: var(--text-mid);
+  line-height: 1.8; max-width: 580px;
+  margin-bottom: 3rem;
+}
+.section-header { margin-bottom: 3rem; }
+
+/* ===== CATEGORIES ===== */
+.categories { background: var(--light-bg); }
+.categories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.cat-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  min-height: 340px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 2rem;
+  text-decoration: none;
+  transition: transform 0.25s;
+}
+.cat-card:hover { transform: translateY(-6px); }
+.cat-card.dairy { background: linear-gradient(135deg, #1A3252 60%, #0D1E36); }
+.cat-card.cnc { background: linear-gradient(135deg, #2A1A0D 60%, #0D1E36); }
+.cat-card-icon {
+  width: 70px; height: 70px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.cat-card-icon svg { width: 40px; height: 40px; }
+.cat-card h3 {
+  font-size: 1.7rem; font-weight: 900; color: white;
+  margin-bottom: 0.6rem;
+}
+.cat-card p {
+  font-size: 14px; color: rgba(255,255,255,0.6);
+  line-height: 1.7; margin-bottom: 1.5rem;
+}
+.cat-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--orange);
+  font-size: 15px; font-weight: 700;
+}
+.cat-link svg { width: 18px; height: 18px; stroke: var(--orange); }
+.cat-bg-text {
+  position: absolute;
+  top: 50%; right: 2rem;
+  transform: translateY(-50%);
+  font-size: 10rem; font-weight: 900;
+  color: rgba(255,255,255,0.03);
+  user-select: none;
+  line-height: 1;
+}
+
+/* ===== PRODUCTS ===== */
+.products { background: white; }
+.products-tabs {
+  display: flex; gap: 0.5rem; margin-bottom: 2.5rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0;
+}
+.tab-btn {
+  font-family: 'Cairo', sans-serif;
+  font-size: 15px; font-weight: 700;
+  padding: 10px 24px;
+  border: none; background: none;
+  cursor: pointer;
+  color: var(--text-mid);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s;
+}
+.tab-btn.active { color: var(--orange); border-bottom-color: var(--orange); }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.product-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  background: white;
+}
+.product-card:hover {
+  box-shadow: 0 8px 32px rgba(13,30,54,0.12);
+  transform: translateY(-4px);
+}
+.product-img {
+  height: 200px;
+  background: var(--light-bg);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.product-img svg { width: 100px; height: 100px; }
+.product-badge {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--orange);
+  color: white;
+  font-size: 12px; font-weight: 700;
+  padding: 3px 10px; border-radius: 100px;
+}
+.product-info { padding: 1.2rem; }
+.product-info h4 {
+  font-size: 16px; font-weight: 700;
+  margin-bottom: 0.4rem; color: var(--text-dark);
+}
+.product-info .cat-tag {
+  font-size: 12px; color: var(--text-light);
+  margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 4px;
+}
+.product-price {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 1rem; padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.price-val {
+  font-size: 18px; font-weight: 900;
+  color: var(--orange);
+}
+.price-currency { font-size: 12px; font-weight: 600; }
+.add-to-cart {
+  background: var(--navy);
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px; font-weight: 700;
+  padding: 8px 16px; border-radius: 8px;
+  border: none; cursor: pointer;
+  transition: background 0.2s;
+}
+.add-to-cart:hover { background: var(--navy-mid); }
+.product-panel { display: none; }
+.product-panel.active { display: block; }
+
+/* ===== WHY US ===== */
+.why-us { background: var(--navy); }
+.why-us .section-title { color: white; }
+.why-us .section-subtitle { color: rgba(255,255,255,0.6); }
+.why-us .section-label { background: rgba(232,104,26,0.2); }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.feature-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 1.8rem 1.5rem;
+  transition: background 0.2s;
+}
+.feature-card:hover { background: rgba(255,255,255,0.09); }
+.feature-icon {
+  width: 52px; height: 52px;
+  background: rgba(232,104,26,0.15);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.feature-icon svg { width: 28px; height: 28px; stroke: var(--orange); fill: none; stroke-width: 2; }
+.feature-card h4 { font-size: 17px; font-weight: 700; color: white; margin-bottom: 0.6rem; }
+.feature-card p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+/* ===== BRANDS ===== */
+.brands { background: var(--light-bg); padding: 3rem; }
+.brands-inner { max-width: 900px; margin: 0 auto; }
+.brands h3 {
+  text-align: center;
+  font-size: 13px; font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+.brands-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: 3rem; flex-wrap: wrap;
+}
+.brand-chip {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 15px; font-weight: 700;
+  color: var(--text-mid);
+}
+
+/* ===== CONTACT ===== */
+.contact { background: white; }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem;
+  align-items: start;
+}
+.contact-info h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 1rem; }
+.contact-info p { font-size: 15px; color: var(--text-mid); line-height: 1.8; margin-bottom: 2rem; }
+.contact-item {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 1.2rem;
+}
+.contact-item-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: rgba(232,104,26,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+}
+.contact-item-icon svg { width: 22px; height: 22px; stroke: var(--orange); fill: none; stroke-width: 2; }
+.contact-item-text p:first-child { font-size: 13px; color: var(--text-light); margin-bottom: 2px; }
+.contact-item-text p:last-child { font-size: 15px; font-weight: 700; color: var(--text-dark); }
+.contact-form {
+  background: var(--light-bg);
+  border-radius: 16px;
+  padding: 2rem;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label {
+  display: block; font-size: 14px; font-weight: 700;
+  color: var(--text-dark); margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  font-family: 'Cairo', sans-serif;
+  font-size: 15px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--orange); }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-submit {
+  width: 100%;
+  background: var(--orange);
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  font-size: 16px; font-weight: 700;
+  padding: 14px; border: none;
+  border-radius: 10px; cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+.form-submit:hover { background: var(--orange-light); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy);
+  padding: 3rem 3rem 1.5rem;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+.footer-col h5 { font-size: 15px; font-weight: 700; color: white; margin-bottom: 1.2rem; }
+.footer-col p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.7rem; }
+.footer-col ul li a {
+  font-size: 14px; color: rgba(255,255,255,0.5);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: var(--orange); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.35); }
+.footer-socials { display: flex; gap: 0.8rem; }
+.social-btn {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.2s;
+}
+.social-btn:hover { background: var(--orange); }
+.social-btn svg { width: 18px; height: 18px; stroke: white; fill: none; stroke-width: 2; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero::after { display: none; }
+  .hero-panel.left, .hero-panel.right { padding: 3rem 2rem; }
+  .categories-grid, .contact-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  section { padding: 3rem 1.5rem; }
+  header { padding: 0 1.5rem; }
+  nav { display: none; }
+  .hamburger { display: block; }
+}
+@media (max-width: 560px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <span class="logo-text">تك<span>إيجيبت</span></span>
+  </a>
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#categories">الفئات</a>
+    <a href="#products">المنتجات</a>
+    <a href="#why-us">لماذا نحن</a>
+    <a href="#contact" class="header-cta">اتصل بنا</a>
+  </nav>
+  <button class="hamburger" aria-label="القائمة">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <!-- Left Panel: Dairy -->
+  <div class="hero-panel left">
+    <div class="hero-eyebrow">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 14H11V10h2v6zm0-8H11V6h2v2z"/></svg>
+      معدات الألبان والمزارع
+    </div>
+    <h1>معدات ألبان<br><span>باحترافية عالية</span></h1>
+    <p>موزعون معتمدون لأحدث معدات تصنيع منتجات الألبان — بدءاً من خطوط الحليب حتى آلات التعبئة والتغليف.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#products" class="btn-primary">
+        تصفح المنتجات
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </a>
+      <a href="#contact" class="btn-outline">اطلب عرض سعر</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">+<span>200</span></div><div class="label">جهاز تم تركيبه</div></div>
+      <div class="hero-stat"><div class="num"><span>15</span></div><div class="label">سنة خبرة</div></div>
+      <div class="hero-stat"><div class="num">+<span>50</span></div><div class="label">ماركة عالمية</div></div>
+    </div>
+  </div>
+  <!-- Right Panel: CNC -->
+  <div class="hero-panel right">
+    <div class="hero-eyebrow">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      مخارط CNC صناعية
+    </div>
+    <h1>دقة هندسية<br><span>مخارط CNC</span></h1>
+    <p>أحدث مخارط التحكم الرقمي CNC لصناعات المعادن والبلاستيك — مع خدمة ما بعد البيع والصيانة.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="#products" class="btn-primary">
+        تصفح الأجهزة
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </a>
+      <a href="#contact" class="btn-outline">استشارة مجانية</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">+<span>80</span></div><div class="label">موديل متاح</div></div>
+      <div class="hero-stat"><div class="num"><span>3</span></div><div class="label">سنوات ضمان</div></div>
+      <div class="hero-stat"><div class="num"><span>24</span></div><div class="label">دعم فني ساعة</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="section-header">
+    <div class="section-label">تصفح حسب الفئة</div>
+    <h2 class="section-title">اختر <span>ما تحتاجه</span></h2>
+    <p class="section-subtitle">نوفر منتجات متخصصة لكل قطاع — سواء كنت تدير مزرعة ألبان أو ورشة تصنيع.</p>
+  </div>
+  <div class="categories-grid">
+    <a class="cat-card dairy" href="#products">
+      <div class="cat-bg-text">🥛</div>
+      <div class="cat-card-icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <rect x="10" y="6" width="20" height="28" rx="4" stroke="white" stroke-width="2"/>
+          <path d="M15 14h10M15 19h10M15 24h6" stroke="#E8681A" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="28" cy="10" r="4" fill="#E8681A" opacity="0.7"/>
+        </svg>
+      </div>
+      <h3>معدات الألبان</h3>
+      <p>خطوط إنتاج، بسترة، تبريد، تعبئة وتغليف، وكل ما تحتاجه مزرعة الألبان الحديثة.</p>
+      <div class="cat-link">تصفح الفئة <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></div>
+    </a>
+    <a class="cat-card cnc" href="#products">
+      <div class="cat-bg-text">⚙️</div>
+      <div class="cat-card-icon">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="10" stroke="white" stroke-width="2"/>
+          <circle cx="20" cy="20" r="4" fill="#E8681A"/>
+          <line x1="20" y1="6" x2="20" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="20" y1="30" x2="20" y2="34" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="6" y1="20" x2="10" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="30" y1="20" x2="34" y2="20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>مخارط CNC</h3>
+      <p>مخارط تحكم رقمي للمعادن والبلاستيك، بدقة عالية وسرعات إنتاج مذهلة لورش التصنيع.</p>
+      <div class="cat-link">تصفح الفئة <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></div>
+    </a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-header">
+    <div class="section-label">منتجاتنا المميزة</div>
+    <h2 class="section-title">أكثر المنتجات <span>مبيعاً</span></h2>
+    <p class="section-subtitle">اختر من بين مئات المنتجات المستوردة من أفضل الماركات العالمية بأسعار تنافسية.</p>
+  </div>
+  <div class="products-tabs">
+    <button class="tab-btn active" onclick="showTab('dairy-products', this)">معدات الألبان</button>
+    <button class="tab-btn" onclick="showTab('cnc-products', this)">مخارط CNC</button>
+  </div>
+
+  <!-- DAIRY PRODUCTS -->
+  <div id="dairy-products" class="product-panel active">
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#EEF4F9;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="20" y="30" width="60" height="50" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="2"/>
+            <rect x="30" y="20" width="40" height="16" rx="4" fill="#378ADD"/>
+            <circle cx="50" cy="65" r="12" fill="white" stroke="#185FA5" stroke-width="2"/>
+            <path d="M44 65h12M50 59v12" stroke="#185FA5" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="product-badge">الأكثر مبيعاً</div>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">معدات الألبان • بسترة</div>
+          <h4>جهاز بسترة حليب 500 لتر/ساعة</h4>
+          <div class="product-price">
+            <div class="price-val">85,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#EFF9F4;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="15" y="35" width="70" height="45" rx="6" fill="#9FE1CB" stroke="#0F6E56" stroke-width="2"/>
+            <rect x="25" y="25" width="50" height="14" rx="4" fill="#1D9E75"/>
+            <circle cx="35" cy="60" r="8" fill="white" stroke="#0F6E56" stroke-width="2"/>
+            <circle cx="65" cy="60" r="8" fill="white" stroke="#0F6E56" stroke-width="2"/>
+            <rect x="40" y="55" width="20" height="10" rx="3" fill="#0F6E56"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">معدات الألبان • تعبئة</div>
+          <h4>ماكينة تعبئة حليب أكياس أوتوماتيك</h4>
+          <div class="product-price">
+            <div class="price-val">120,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#FEF4EA;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <ellipse cx="50" cy="68" rx="30" ry="12" fill="#FAC775" stroke="#BA7517" stroke-width="2"/>
+            <rect x="30" y="30" width="40" height="40" rx="6" fill="#FAEEDA" stroke="#BA7517" stroke-width="2"/>
+            <path d="M40 45h20M40 55h14" stroke="#BA7517" stroke-width="2" stroke-linecap="round"/>
+            <rect x="42" y="20" width="16" height="12" rx="3" fill="#EF9F27"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">معدات الألبان • تبريد</div>
+          <h4>خزان تبريد حليب 1000 لتر استيل</h4>
+          <div class="product-price">
+            <div class="price-val">45,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#F4EEFA;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="20" y="25" width="60" height="55" rx="8" fill="#CECBF6" stroke="#534AB7" stroke-width="2"/>
+            <circle cx="50" cy="52" r="16" fill="white" stroke="#534AB7" stroke-width="2"/>
+            <circle cx="50" cy="52" r="6" fill="#7F77DD"/>
+            <path d="M50 36v6M50 62v6M34 52h6M60 52h6" stroke="#534AB7" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">معدات الألبان • فرز</div>
+          <h4>جهاز فرز الحليب الأوتوماتيكي</h4>
+          <div class="product-price">
+            <div class="price-val">32,500 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#EEF4F9;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="25" y="30" width="50" height="45" rx="6" fill="#B5D4F4" stroke="#185FA5" stroke-width="2"/>
+            <path d="M35 55 L50 40 L65 55" stroke="#185FA5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M50 40 L50 70" stroke="#185FA5" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="35" y="22" width="30" height="10" rx="3" fill="#378ADD"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">معدات الألبان • حلب</div>
+          <h4>ماكينة حلب آلية للأبقار (2 وحدة)</h4>
+          <div class="product-price">
+            <div class="price-val">28,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 6 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#EFF9F4;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="20" y="35" width="60" height="40" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="2"/>
+            <path d="M30 55h40M40 45v20M60 45v20" stroke="#0F6E56" stroke-width="2" stroke-linecap="round"/>
+            <rect x="30" y="25" width="40" height="12" rx="4" fill="#1D9E75"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">معدات الألبان • تعقيم</div>
+          <h4>خط تعقيم CIP أوتوماتيك</h4>
+          <div class="product-price">
+            <div class="price-val">67,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CNC PRODUCTS -->
+  <div id="cnc-products" class="product-panel">
+    <div class="products-grid">
+      <!-- CNC 1 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#F1EFE8;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="15" y="25" width="70" height="55" rx="6" fill="#D3D1C7" stroke="#5F5E5A" stroke-width="2"/>
+            <rect x="25" y="35" width="30" height="25" rx="4" fill="#888780"/>
+            <circle cx="72" cy="47" r="12" fill="#5F5E5A" stroke="#2C2C2A" stroke-width="2"/>
+            <circle cx="72" cy="47" r="5" fill="#E8681A"/>
+            <rect x="25" y="68" width="50" height="6" rx="2" fill="#444441"/>
+          </svg>
+          <div class="product-badge">جديد</div>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">مخارط CNC • تفريز</div>
+          <h4>مخرطة CNC تفريز 3 محاور 1000mm</h4>
+          <div class="product-price">
+            <div class="price-val">380,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- CNC 2 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#F1EFE8;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="20" y="30" width="60" height="45" rx="6" fill="#B4B2A9" stroke="#444441" stroke-width="2"/>
+            <circle cx="50" cy="52" r="18" fill="#888780" stroke="#444441" stroke-width="2"/>
+            <circle cx="50" cy="52" r="8" fill="#E8681A"/>
+            <rect x="25" y="78" width="50" height="8" rx="3" fill="#2C2C2A"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">مخارط CNC • خراطة</div>
+          <h4>مخرطة CNC خراطة أوتوماتيك 1500mm</h4>
+          <div class="product-price">
+            <div class="price-val">520,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- CNC 3 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#FEF4EA;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="18" y="28" width="64" height="50" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="2"/>
+            <rect x="28" y="38" width="20" height="30" rx="3" fill="#EF9F27"/>
+            <circle cx="66" cy="53" r="14" fill="#BA7517" stroke="#633806" stroke-width="2"/>
+            <path d="M60 53h12M66 47v12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">مخارط CNC • حفر</div>
+          <h4>مركز حفر CNC 4 محاور دقيق</h4>
+          <div class="product-price">
+            <div class="price-val">290,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- CNC 4 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#F1EFE8;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="20" y="25" width="60" height="55" rx="8" fill="#D3D1C7" stroke="#444441" stroke-width="2"/>
+            <rect x="30" y="35" width="40" height="20" rx="4" fill="#888780"/>
+            <path d="M35 68h30M40 60h20" stroke="#444441" stroke-width="2" stroke-linecap="round"/>
+            <rect x="40" y="15" width="20" height="12" rx="3" fill="#E8681A"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">مخارط CNC • قطع</div>
+          <h4>مخرطة قطع ليزر CNC بدقة 0.01mm</h4>
+          <div class="product-price">
+            <div class="price-val">750,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- CNC 5 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#F1EFE8;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="15" y="30" width="70" height="50" rx="6" fill="#B4B2A9" stroke="#5F5E5A" stroke-width="2"/>
+            <path d="M30 55 Q50 35 70 55" stroke="#E8681A" stroke-width="3" stroke-linecap="round"/>
+            <path d="M30 65 Q50 45 70 65" stroke="#5F5E5A" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="30" cy="55" r="4" fill="#E8681A"/>
+            <circle cx="70" cy="55" r="4" fill="#E8681A"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">مخارط CNC • انحناء</div>
+          <h4>ماكينة انحناء أنابيب CNC أوتوماتيك</h4>
+          <div class="product-price">
+            <div class="price-val">195,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+      <!-- CNC 6 -->
+      <div class="product-card">
+        <div class="product-img" style="background:#FEF4EA;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <rect x="20" y="30" width="60" height="50" rx="6" fill="#FAC775" stroke="#BA7517" stroke-width="2"/>
+            <rect x="30" y="40" width="15" height="30" rx="3" fill="#EF9F27"/>
+            <rect x="55" y="40" width="15" height="30" rx="3" fill="#EF9F27"/>
+            <path d="M30 35h40" stroke="#BA7517" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M45 55h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="product-info">
+          <div class="cat-tag">مخارط CNC • تركيب</div>
+          <h4>مخرطة ثنائية العمود CNC عالية الإنتاج</h4>
+          <div class="product-price">
+            <div class="price-val">680,000 <span class="price-currency">جنيه</span></div>
+            <button class="add-to-cart" onclick="addToCart(this)">+ اضف للسلة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="why-us">
+  <div class="section-header">
+    <div class="section-label">لماذا تختارنا</div>
+    <h2 class="section-title" style="color:white;">ثقة تبنى على <span>الخبرة والجودة</span></h2>
+    <p class="section-subtitle">+15 سنة من العمل في سوق المعدات الصناعية في مصر والوطن العربي</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <h4>ضمان 3 سنوات</h4>
+      <p>ضمان شامل على جميع المنتجات مع قطع غيار متاحة دائماً.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <h4>تركيب وتشغيل</h4>
+      <p>فريق هندسي متخصص يتولى التركيب والتشغيل والتدريب في موقعك.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </div>
+      <h4>دعم فني 24/7</h4>
+      <p>فريق دعم متاح على مدار الساعة للإجابة على استفساراتك وحل مشاكلك.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <h4>أسعار تنافسية</h4>
+      <p>أسعار مباشرة من الموزع بدون وسطاء مع إمكانية التقسيط والتمويل.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<div class="brands">
+  <div class="brands-inner">
+    <h3>ماركات عالمية معتمدة لدينا</h3>
+    <div class="brands-row">
+      <div class="brand-chip">Tetra Pak</div>
+      <div class="brand-chip">Fanuc CNC</div>
+      <div class="brand-chip">GEA Group</div>
+      <div class="brand-chip">Siemens</div>
+      <div class="brand-chip">Haas</div>
+      <div class="brand-chip">DMG Mori</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-header">
+    <div class="section-label">تواصل معنا</div>
+    <h2 class="section-title">نحن هنا <span>للمساعدة</span></h2>
+    <p class="section-subtitle">اتصل بنا أو أرسل لنا استفسارك وسيرد عليك فريقنا خلال ساعات.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>معلومات التواصل</h3>
+      <p>فريقنا من المهندسين المتخصصين جاهز لتقديم الاستشارة المناسبة لاحتياجاتك.</p>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <p>الهاتف</p>
+          <p>01026150788</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <p>البريد الإلكتروني</p>
+          <p>mohserag851@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div class="contact-item-text">
+          <p>العنوان</p>
+          <p>دمياط، مصر</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>الاسم الكامل</label>
+          <input type="text" placeholder="اسمك الكامل">
+        </div>
+        <div class="form-group">
+          <label>رقم الهاتف</label>
+          <input type="tel" placeholder="01xxxxxxxxx">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>البريد الإلكتروني</label>
+        <input type="email" placeholder="email@example.com">
+      </div>
+      <div class="form-group">
+        <label>نوع المنتج المطلوب</label>
+        <select>
+          <option value="">اختر الفئة</option>
+          <option>معدات ألبان — بسترة</option>
+          <option>معدات ألبان — تعبئة وتغليف</option>
+          <option>معدات ألبان — تبريد</option>
+          <option>مخارط CNC — تفريز</option>
+          <option>مخارط CNC — خراطة</option>
+          <option>مخارط CNC — حفر</option>
+          <option>أخرى</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>تفاصيل الاستفسار</label>
+        <textarea placeholder="اكتب تفاصيل احتياجاتك هنا..."></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm(this)">إرسال الاستفسار</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <a class="logo" href="#" style="margin-bottom:1rem;display:inline-flex;">
+        <div class="logo-icon"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <span class="logo-text" style="margin-right:10px;">تك<span>إيجيبت</span></span>
+      </a>
+      <p>وكلاء معتمدون لأفضل معدات الألبان ومخارط CNC في مصر. نخدم قطاع الصناعة الغذائية والتصنيع منذ 2009.</p>
+    </div>
+    <div class="footer-col">
+      <h5>الخدمات</h5>
+      <ul>
+        <li><a href="#">توريد المعدات</a></li>
+        <li><a href="#">التركيب والتشغيل</a></li>
+        <li><a href="#">الصيانة الدورية</a></li>
+        <li><a href="#">قطع الغيار</a></li>
+        <li><a href="#">التدريب والتأهيل</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>المنتجات</h5>
+      <ul>
+        <li><a href="#">معدات البسترة</a></li>
+        <li><a href="#">خطوط التعبئة</a></li>
+        <li><a href="#">مخارط CNC</a></li>
+        <li><a href="#">مراكز الحفر</a></li>
+        <li><a href="#">معدات التبريد</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>تواصل معنا</h5>
+      <ul>
+        <li><a href="tel:01234567890">📞 01234567890</a></li>
+        <li><a href="mailto:info@techegypt.com">✉️ info@techegypt.com</a></li>
+        <li><a href="#">📍 دمياط، مصر</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 تك إيجيبت. جميع الحقوق محفوظة.</p>
+    <div class="footer-socials">
+      <a class="social-btn" href="#" aria-label="فيسبوك">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a class="social-btn" href="#" aria-label="واتساب">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      </a>
+      <a class="social-btn" href="#" aria-label="لينكدإن">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/201234567890" target="_blank" style="
+  position:fixed; bottom:28px; left:28px; z-index:999;
+  width:56px; height:56px;
+  background:#25D366; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.4);
+  text-decoration:none;
+  transition:transform 0.2s;
+" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white" stroke="none">
+    <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+  </svg>
+</a>
+
+<!-- CART TOAST -->
+<div id="cart-toast" style="
+  position:fixed; top:90px; left:50%; transform:translateX(-50%) translateY(-20px);
+  background:var(--navy); color:white;
+  padding:12px 24px; border-radius:10px;
+  font-family:'Cairo',sans-serif; font-size:15px; font-weight:700;
+  opacity:0; transition:all 0.3s; z-index:1000;
+  border: 1.5px solid var(--orange);
+">✅ تم إضافة المنتج إلى السلة</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.product-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function addToCart(btn) {
+  const toast = document.getElementById('cart-toast');
+  toast.style.opacity = '1';
+  toast.style.transform = 'translateX(-50%) translateY(0)';
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(-50%) translateY(-20px)';
+  }, 2500);
+}
+
+function submitForm(btn) {
+  btn.textContent = '✓ تم إرسال الطلب بنجاح!';
+  btn.style.background = '#1D9E75';
+  setTimeout(() => {
+    btn.textContent = 'إرسال الاستفسار';
+    btn.style.background = '';
+  }, 3000);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
